@@ -1,0 +1,98 @@
+.feedbackContain {
+  background-image: linear-gradient(to right, #b3c1f3, #ebeffc);
+  padding: 3rem 0;
+
+  .feedbackRow {
+    margin-bottom: 1rem;
+
+    .contain {
+      background-color: #ffffff;
+      padding: 3rem;
+      border-radius: 0.5rem;
+
+      &:first-child {
+        margin-right: 0.5rem;
+      }
+
+      &:last-child {
+        margin-left: 0.5rem;
+      }
+
+      .header {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        .avatar {
+          border-radius: 50%;
+          overflow: hidden;
+          width: 4.5rem;
+          height: 4.5rem;
+          border: 2px solid #ccd3db;
+
+          & > span {
+            width: 100% !important;
+            height: 100% !important;
+          }
+        }
+
+        .info {
+          width: calc(80% - 1rem);
+          @media screen and (max-width: 992px) {
+            width: calc(80% - 2rem);
+          }
+        }
+      }
+
+      .name {
+        font-weight: 700;
+        font-size: 1.25rem;
+      }
+
+      .position {
+        font-weight: 300;
+        font-size: 1rem;
+        color: #111;
+        margin: 0.5rem 0;
+      }
+      .feedbackContent {
+        margin-top: 1rem;
+        position: relative;
+        width: calc(80% - 1rem);
+        float: right;
+
+        @media screen and (max-width: 992px) {
+          width: 100%;
+        }
+
+        .quoter {
+          position: absolute;
+          font-size: 3rem;
+          color: rgba(170, 186, 247, 0.6);
+          top: -1rem;
+          left: -1rem;
+          z-index: 0;
+        }
+      }
+    }
+
+    @media screen and (max-width: 576px) {
+      margin: 1rem !important;
+    }
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+
+      .contain {
+        &:first-child {
+          margin-right: 0;
+        }
+
+        &:last-child {
+          margin-top: 1rem;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

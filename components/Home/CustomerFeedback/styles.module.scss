@@ -1,0 +1,39 @@
+.customerFeedback {
+  .contain {
+    background: url(https://thietbispagiatot.com/Uploads/825/images/BG/bg-3.jpg)
+      no-repeat center;
+    margin: 2rem auto;
+    padding: 2rem 0;
+  }
+
+  .feedbackItem {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .avatar {
+      border-radius: 50%;
+      overflow: hidden;
+      width: 7rem;
+      height: 7rem;
+
+      & > span {
+        width: 100% !important;
+        height: 100% !important;
+      }
+    }
+
+    .name {
+      color: #ea830e;
+      font-size: 1em;
+      margin: 0.5rem 0;
+    }
+
+    .feedback {
+      width: 50%;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+  }
+}

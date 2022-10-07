@@ -1,0 +1,53 @@
+.serviceItem{
+    width: 100%;
+    position: relative;
+    background-color: white;
+    height: 100%;
+    border-radius: 10px;
+    .image{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 200px;
+        width: 100%;
+        border-radius: 10px 10px 0px 0px;
+    }
+    .header{
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-weight: bold;
+        background-color: #fcb900;
+        color: black;
+    }
+    .text{
+        padding: 10px;
+        color: black;
+        text-align: justify;
+        height: calc(100% - 240px);
+    }
+    .mask{
+        position: absolute;
+        left: 7px;
+        right: 7px;
+        top: 7px;
+        bottom: 7px;
+        z-index: 2;
+        background-color: rgba(#000, 0.6);
+        display: flex;
+        opacity: 0;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s;
+        border-radius: 10px;
+    }
+    .view{
+        border: 1px solid #fcb900;
+        padding: 10px 20px;
+        border-radius: 10px;
+        display: inline-block;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}

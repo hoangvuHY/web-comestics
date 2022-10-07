@@ -1,0 +1,36 @@
+.cardItem {
+  .imageContent {
+    display: flex;
+    justify-content: end;
+
+    .image {
+      background: url(https://hpmed.vn/wp-content/uploads/2022/08/icon-ngoi-sao.png)
+        no-repeat;
+      background-size: contain;
+      width: 60px;
+      margin-bottom: 1em;
+      max-width: 100%;
+      position: relative;
+      height: 100%;
+    }
+  }
+
+  &:first-child {
+    .productDescription {
+      .title {
+        color: #f99b1c;
+      }
+    }
+  }
+
+  .productDescription {
+    .title {
+      font-size: 1.25rem;
+      font-weight: 700;
+
+      @media screen and (max-width: 576px) {
+        font-size: 1rem;
+      }
+    }
+  }
+}
