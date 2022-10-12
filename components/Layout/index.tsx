@@ -4,8 +4,10 @@ export default function Layout({ children }: any) {
   return (
     <>
       <Header />
-      {children}
-      <Footer />
+      <div className="body">
+        {children}
+        <Footer />
+      </div>
     </>
   );
 }
