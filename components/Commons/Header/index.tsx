@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 function Header() {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar className={styles.navContain} bg="light" expand="lg">
       <Container className={styles.header}>
         <Image src={logo} width="50px" height="50px" alt="Logo" />
         <div className={styles.sologan}>Thiên đường làm đẹp</div>

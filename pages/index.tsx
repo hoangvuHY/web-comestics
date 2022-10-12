@@ -1,5 +1,7 @@
 import React from "react";
 
+import styles from './styles.module.scss';
+
 import Slider from "~/components/Home/Slider";
 import NewsHomePage from "~/components/Home/NewsHomePage";
 import AgentSystem from "~/components/Home/AgentSystem";
