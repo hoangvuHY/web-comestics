@@ -2,6 +2,8 @@
   background-color: #baa62f;
   color: #190301;
   padding: 3rem 0;
+  height: 340px;
+  box-sizing: border-box;
 
   .footerContact {
     height: 100%;
@@ -41,10 +43,11 @@
       .infoContact {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+        width: 80vw;
 
         .infoCompany {
-          text-align: center;
+          text-align: left;
         }
       }
 
