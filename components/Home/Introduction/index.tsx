@@ -3,11 +3,13 @@ import { Col, Container, Row } from "react-bootstrap";
 import styles from "./styles.module.scss";
 import dataIntroduction from "./data.json";
 import IntroItem from "./IntroItem";
+import { useRouter } from "next/router";
 
 const Introduction: FC = () => {
+    const router = useRouter();
     return (
         <Container>
-            <h2 className="title-header">HHG SPA LÀ ĐỊA CHỈ LÀM ĐẸP UY TÍN TẠI VIỆT NAM</h2>
+            <h2 className="title-header" onClick={() => router.push('/gioi-thieu')}>HHG SPA LÀ ĐỊA CHỈ LÀM ĐẸP UY TÍN TẠI VIỆT NAM</h2>
             <Row>
                 {
                     dataIntroduction.introduction.map((value, index) =>
