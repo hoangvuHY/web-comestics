@@ -1,181 +1,122 @@
 import Image from 'next/image';
-import React from 'react'
+import React, { EventHandler, useState } from 'react'
 import { Button, Container, Form, Row } from "react-bootstrap";
 
 import styles from './styles.module.scss';
 
+import data from './data.json';
+import CardItem from './CardItem';
+import { E_SORT_PRODUCTION } from '~/enum/production';
+import { OptionCountProduction, sortFilterArrays } from '~/constants/productions';
+
+interface IProductionData {
+  key: number;
+  name: string;
+  imageLink: string;
+  priceSell: number;
+  originalPrice: number;
+  discount: number;
+  description: string;
+  isNewest: boolean;
+  isBestSell: boolean;
+}
+
+
 const ProductionComponent = () => {
+  const [activeFilter, setActiveFilter] = useState(sortFilterArrays[1].value);
+  const [selectOption, setSelectOption] = useState(5);
+
+  const dataProduction: IProductionData[] = JSON.parse(JSON.stringify(data.productions)).slice(0, selectOption);
+
+  const [productionData, setProductionData] = useState<IProductionData[]>(dataProduction);
+
+  const handleChangeSelectPage = (event: any) => {
+    setSelectOption(event.target.value)
+  }
+
+  const handleFilterWithItem = (item: any) => {
+    switch (item) {
+      case 'NEWEST':
+        const filterNewestData = dataProduction.filter(production => production.isNewest);
+        setProductionData([...filterNewestData]);
+        break;
+
+      case 'BEST_SELL':
+        setProductionData([...dataProduction]);
+        break;
+
+      case 'LOW_TO_HIGH':
+        const filterLowToHighData = dataProduction
+          .sort(
+            (firstNumber, secondNumber) => firstNumber.priceSell - secondNumber.priceSell
+          );
+
+        setProductionData([...filterLowToHighData]);
+        break;
+
+      case 'HIGH_TO_LOW':
+        const filterHighToLowData = dataProduction
+          .sort(
+            (firstNumber, secondNumber) => (secondNumber.priceSell - firstNumber.priceSell)
+          );
+
+        setProductionData([...filterHighToLowData]);
+        break;
+
+      default:
+    }
+  }
+
+  const handleActiveFilter = (item: any) => {
+    setActiveFilter(item.value);
+    handleFilterWithItem(item.key)
+  };
+
   return (
-    <Container>
+    <Container className={styles.productionContainer}>
       <Row>
         <h2 className="title-header">SẢN PHẨM CỦA HHG</h2>
       </Row>
 
-      <Row>
-        <div className={styles.filter}>
-          <div className={styles.title}>Sắp xếp</div>
-          <Button className={styles.buttonFilter}>
-            Mới nhất
-          </Button>
-          <Button className={styles.buttonFilter}>
-            Bán chạy
-          </Button>
-          <Button className={styles.buttonFilter}>
-            Giá thấp đến cao
-          </Button>
-          <Button className={styles.buttonFilter}>
-            Giá cao đến thấp
-          </Button>
-        </div>
+      <Row className={styles.filterRow}>
+        <div className={styles.filterContain}>
+          <div className={styles.filter}>
+            <div className={styles.title}>Sắp xếp</div>
+            {
+              sortFilterArrays.map((item: any) => (
+                <Button
+                  key={item.key}
+                  className={
+                    `${styles.buttonFilter} ${item.value === activeFilter && `${styles.active}`}`
+                  }
+                  onClick={() => handleActiveFilter(item)}
+                >
+                  {item.value}
+                </Button>
+              ))
+            }
+          </div>
 
-        <div className={styles.displayRecord}>
-          <Form.Select aria-label="Default select example">
-            <option value="20">20</option>
-            <option value="40">40</option>
-          </Form.Select>
+          <div className={styles.displayRecord}>
+            <Form.Select value={selectOption} onChange={handleChangeSelectPage}>
+              {
+                OptionCountProduction.map(item => (
+                  <option value={item.key} key={item.key}>
+                    {item.value}
+                  </option>
+                ))
+              }
+            </Form.Select>
+          </div>
         </div>
       </Row>
 
       <Row className={styles.productRow}>
-        <div className={styles.productItem}>
-          <div className={styles.cardItem}>
-            <div className={styles.image}>
-              <Image
-                src="https://media.hasaki.vn/catalog/product/p/r/promotions-auto-nuoc-tay-trang-tuoi-mat-l-oreal-3-in-1-danh-cho-da-dau-da-hon-hop-400ml_t1McNQpC8jxcpLPk_img_380x380_64adc6_fit_center.png"
-                alt="image avatar"
-                width="100%"
-                height="100%"
-              />
-            </div>
-
-            <div className={styles.price}>
-              <p className={styles.sellPrice}>148.000 đ</p>
-
-              <div className={styles.right}>
-                <p className={styles.originalPrice}>299.000 đ</p>
-                <p className={styles.discount}>29%</p>
-              </div>
-            </div>
-            <h6 className={styles.name}>
-              L&#39;OREAL
-            </h6>
-            <p className={styles.content}>
-              Nước Tẩy Trang L&#39;OREAL Tươi Mát Cho Da Dầu, Hỗn Hợp 400ml Micellar Water 3-in-1 Refreshing Even For Sensitive Skin
-            </p>
-          </div>
-        </div>
-
-        <div className={styles.productItem}>
-          <div className={styles.cardItem}>
-            <div className={styles.image}>
-              <Image
-                src="https://media.hasaki.vn/catalog/product/p/r/promotions-auto-nuoc-tay-trang-tuoi-mat-l-oreal-3-in-1-danh-cho-da-dau-da-hon-hop-400ml_t1McNQpC8jxcpLPk_img_380x380_64adc6_fit_center.png"
-                alt="image avatar"
-                width="100%"
-                height="100%"
-              />
-            </div>
-
-            <div className={styles.price}>
-              <p className={styles.sellPrice}>148.000 đ</p>
-
-              <div className={styles.right}>
-                <p className={styles.originalPrice}>299.000 đ</p>
-                <p className={styles.discount}>29%</p>
-              </div>
-            </div>
-            <h6 className={styles.name}>
-              L&#39;OREAL
-            </h6>
-            <p className={styles.content}>
-              Nước Tẩy Trang L&#39;OREAL Tươi Mát Cho Da Dầu, Hỗn Hợp 400ml Micellar Water 3-in-1 Refreshing Even For Sensitive Skin
-            </p>
-          </div>
-        </div>
-
-        <div className={styles.productItem}>
-          <div className={styles.cardItem}>
-            <div className={styles.image}>
-              <Image
-                src="https://media.hasaki.vn/catalog/product/p/r/promotions-auto-nuoc-tay-trang-tuoi-mat-l-oreal-3-in-1-danh-cho-da-dau-da-hon-hop-400ml_t1McNQpC8jxcpLPk_img_380x380_64adc6_fit_center.png"
-                alt="image avatar"
-                width="100%"
-                height="100%"
-              />
-            </div>
-
-            <div className={styles.price}>
-              <p className={styles.sellPrice}>148.000 đ</p>
-
-              <div className={styles.right}>
-                <p className={styles.originalPrice}>299.000 đ</p>
-                <p className={styles.discount}>29%</p>
-              </div>
-            </div>
-            <h6 className={styles.name}>
-              L&#39;OREAL
-            </h6>
-            <p className={styles.content}>
-              Nước Tẩy Trang L&#39;OREAL Tươi Mát Cho Da Dầu, Hỗn Hợp 400ml Micellar Water 3-in-1 Refreshing Even For Sensitive Skin
-            </p>
-          </div>
-        </div>
-
-        <div className={styles.productItem}>
-          <div className={styles.cardItem}>
-            <div className={styles.image}>
-              <Image
-                src="https://media.hasaki.vn/catalog/product/p/r/promotions-auto-nuoc-tay-trang-tuoi-mat-l-oreal-3-in-1-danh-cho-da-dau-da-hon-hop-400ml_t1McNQpC8jxcpLPk_img_380x380_64adc6_fit_center.png"
-                alt="image avatar"
-                width="100%"
-                height="100%"
-              />
-            </div>
-
-            <div className={styles.price}>
-              <p className={styles.sellPrice}>148.000 đ</p>
-
-              <div className={styles.right}>
-                <p className={styles.originalPrice}>299.000 đ</p>
-                <p className={styles.discount}>29%</p>
-              </div>
-            </div>
-            <h6 className={styles.name}>
-              L&#39;OREAL
-            </h6>
-            <p className={styles.content}>
-              Nước Tẩy Trang L&#39;OREAL Tươi Mát Cho Da Dầu, Hỗn Hợp 400ml Micellar Water 3-in-1 Refreshing Even For Sensitive Skin
-            </p>
-          </div>
-        </div>
-
-        <div className={styles.productItem}>
-          <div className={styles.cardItem}>
-            <div className={styles.image}>
-              <Image
-                src="https://media.hasaki.vn/catalog/product/p/r/promotions-auto-nuoc-tay-trang-tuoi-mat-l-oreal-3-in-1-danh-cho-da-dau-da-hon-hop-400ml_t1McNQpC8jxcpLPk_img_380x380_64adc6_fit_center.png"
-                alt="image avatar"
-                width="100%"
-                height="100%"
-              />
-            </div>
-
-            <div className={styles.price}>
-              <p className={styles.sellPrice}>148.000 đ</p>
-
-              <div className={styles.right}>
-                <p className={styles.originalPrice}>299.000 đ</p>
-                <p className={styles.discount}>29%</p>
-              </div>
-            </div>
-            <h6 className={styles.name}>
-              L&#39;OREAL
-            </h6>
-            <p className={styles.content}>
-              Nước Tẩy Trang L&#39;OREAL Tươi Mát Cho Da Dầu, Hỗn Hợp 400ml Micellar Water 3-in-1 Refreshing Even For Sensitive Skin
-            </p>
-          </div>
-        </div>
+        {
+          productionData.map((production) => (
+            <CardItem key={production.key} production={production} />
+          ))
+        }
       </Row>
     </Container>
   )

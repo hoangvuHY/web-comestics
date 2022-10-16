@@ -1,0 +1,136 @@
+{
+  "productions": [
+    {
+      "key": 1,
+      "name": "L'OREAL",
+      "imageLink": "https://media.hasaki.vn/catalog/product/t/o/top_fb_ads_200400003_151022-1665815895_img_380x380_64adc6_fit_center.jpg",
+      "priceSell": 148000,
+      "originalPrice": 290000,
+      "discount": 29,
+      "description": "Nước Tẩy Trang L&#39;OREAL Tươi Mát Cho Da Dầu, Hỗn Hợp 400ml Micellar Water 3-in-1 Refreshing Even For Sensitive Skin",
+      "isNewest": true,
+      "isBestSell": true
+    },
+    {
+      "key": 2,
+      "name": "L'OREAL",
+      "imageLink": "https://media.hasaki.vn/catalog/product/t/o/top_fb_ads_200400003_151022-1665815895_img_380x380_64adc6_fit_center.jpg",
+      "priceSell": 123000,
+      "originalPrice": 290000,
+      "discount": 29,
+      "description": "Nước Tẩy Trang L&#39;OREAL Tươi Mát Cho Da Dầu, Hỗn Hợp 400ml Micellar Water 3-in-1 Refreshing Even For Sensitive Skin",
+      "isNewest": true,
+      "isBestSell": false
+    },
+    {
+      "key": 3,
+      "name": "L'OREAL",
+      "imageLink": "https://media.hasaki.vn/catalog/product/t/o/top_fb_ads_200400003_151022-1665815895_img_380x380_64adc6_fit_center.jpg",
+      "priceSell": 234000,
+      "originalPrice": 290000,
+      "discount": 29,
+      "description": "Nước Tẩy Trang L&#39;OREAL Tươi Mát Cho Da Dầu, Hỗn Hợp 400ml Micellar Water 3-in-1 Refreshing Even For Sensitive Skin",
+      "isNewest": true,
+      "isBestSell": true
+    },
+    {
+      "key": 4,
+      "name": "L'OREAL",
+      "imageLink": "https://media.hasaki.vn/catalog/product/t/o/top_fb_ads_200400003_151022-1665815895_img_380x380_64adc6_fit_center.jpg",
+      "priceSell": 235000,
+      "originalPrice": 290000,
+      "discount": 29,
+      "description": "Nước Tẩy Trang L&#39;OREAL Tươi Mát Cho Da Dầu, Hỗn Hợp 400ml Micellar Water 3-in-1 Refreshing Even For Sensitive Skin",
+      "isNewest": false,
+      "isBestSell": true
+    },
+    {
+      "key": 5,
+      "name": "L'OREAL",
+      "imageLink": "https://media.hasaki.vn/catalog/product/t/o/top_fb_ads_200400003_151022-1665815895_img_380x380_64adc6_fit_center.jpg",
+      "priceSell": 145000,
+      "originalPrice": 290000,
+      "discount": 29,
+      "description": "Nước Tẩy Trang L&#39;OREAL Tươi Mát Cho Da Dầu, Hỗn Hợp 400ml Micellar Water 3-in-1 Refreshing Even For Sensitive Skin",
+      "isNewest": true,
+      "isBestSell": false
+    },
+    {
+      "key": 6,
+      "name": "L'OREAL",
+      "imageLink": "https://media.hasaki.vn/catalog/product/t/o/top_fb_ads_200400003_151022-1665815895_img_380x380_64adc6_fit_center.jpg",
+      "priceSell": 245999,
+      "originalPrice": 290000,
+      "discount": 29,
+      "description": "Nước Tẩy Trang L&#39;OREAL Tươi Mát Cho Da Dầu, Hỗn Hợp 400ml Micellar Water 3-in-1 Refreshing Even For Sensitive Skin",
+      "isNewest": false,
+      "isBestSell": true
+    },
+    {
+      "key": 7,
+      "name": "L'OREAL",
+      "imageLink": "https://media.hasaki.vn/catalog/product/t/o/top_fb_ads_200400003_151022-1665815895_img_380x380_64adc6_fit_center.jpg",
+      "priceSell": 98000,
+      "originalPrice": 290000,
+      "discount": 29,
+      "description": "Nước Tẩy Trang L&#39;OREAL Tươi Mát Cho Da Dầu, Hỗn Hợp 400ml Micellar Water 3-in-1 Refreshing Even For Sensitive Skin",
+      "isNewest": false,
+      "isBestSell": false
+    },
+    {
+      "key": 8,
+      "name": "L'OREAL",
+      "imageLink": "https://media.hasaki.vn/catalog/product/t/o/top_fb_ads_200400003_151022-1665815895_img_380x380_64adc6_fit_center.jpg",
+      "priceSell": 23000,
+      "originalPrice": 290000,
+      "discount": 29,
+      "description": "Nước Tẩy Trang L&#39;OREAL Tươi Mát Cho Da Dầu, Hỗn Hợp 400ml Micellar Water 3-in-1 Refreshing Even For Sensitive Skin",
+      "isNewest": true,
+      "isBestSell": true
+    },
+    {
+      "key": 9,
+      "name": "L'OREAL",
+      "imageLink": "https://media.hasaki.vn/catalog/product/t/o/top_fb_ads_200400003_151022-1665815895_img_380x380_64adc6_fit_center.jpg",
+      "priceSell": 30000,
+      "originalPrice": 290000,
+      "discount": 29,
+      "description": "Nước Tẩy Trang L&#39;OREAL Tươi Mát Cho Da Dầu, Hỗn Hợp 400ml Micellar Water 3-in-1 Refreshing Even For Sensitive Skin",
+      "isNewest": true,
+      "isBestSell": true
+    },
+    {
+      "key": 10,
+      "name": "L'OREAL",
+      "imageLink": "https://media.hasaki.vn/catalog/product/t/o/top_fb_ads_200400003_151022-1665815895_img_380x380_64adc6_fit_center.jpg",
+      "priceSell": 48000,
+      "originalPrice": 290000,
+      "discount": 29,
+      "description": "Nước Tẩy Trang L&#39;OREAL Tươi Mát Cho Da Dầu, Hỗn Hợp 400ml Micellar Water 3-in-1 Refreshing Even For Sensitive Skin",
+      "isNewest": false,
+      "isBestSell": true
+    },
+    {
+      "key": 11,
+      "name": "L'OREAL",
+      "imageLink": "https://media.hasaki.vn/catalog/product/t/o/top_fb_ads_200400003_151022-1665815895_img_380x380_64adc6_fit_center.jpg",
+      "priceSell": 500000,
+      "originalPrice": 290000,
+      "discount": 29,
+      "description": "Nước Tẩy Trang L&#39;OREAL Tươi Mát Cho Da Dầu, Hỗn Hợp 400ml Micellar Water 3-in-1 Refreshing Even For Sensitive Skin",
+      "isNewest": true,
+      "isBestSell": true
+    },
+    {
+      "key": 12,
+      "name": "L'OREAL",
+      "imageLink": "https://media.hasaki.vn/catalog/product/t/o/top_fb_ads_200400003_151022-1665815895_img_380x380_64adc6_fit_center.jpg",
+      "priceSell": 89000,
+      "originalPrice": 290000,
+      "discount": 29,
+      "description": "Nước Tẩy Trang L&#39;OREAL Tươi Mát Cho Da Dầu, Hỗn Hợp 400ml Micellar Water 3-in-1 Refreshing Even For Sensitive Skin",
+      "isNewest": true,
+      "isBestSell": true
+    }
+  ]
+}
