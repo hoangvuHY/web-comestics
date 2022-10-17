@@ -5,8 +5,10 @@ import logo from "~/assets/image/logo.png";
 import Image from 'next/image';
 import React, { useEffect } from "react";
 import { FaBars, FaTimes, FaAngleDown } from "react-icons/fa";
+import { useRouter } from "next/router";
 
 function Header() {
+  const router = useRouter();
   const handleOnMouseOverService = () => {
     document.getElementById('service-child')?.classList.add('d-flex');
   }
@@ -49,11 +51,11 @@ function Header() {
           </Col>
           <Col xs={12} lg={8} className={styles.menu}>
             <div>
-              <span>GIỚI THIỆU</span>
+              <span onClick={() => router.push('/gioi-thieu')}>GIỚI THIỆU</span>
               <span onMouseOver={handleOnMouseOverService} onMouseLeave={handleOnMouseLeaveService} className={styles.service}>DỊCH VỤ</span>
               <span>SẢN PHẨM</span>
               <span>GIẢI PHÁP</span>
-              <span>HỆ THỐNG ĐẠI LÝ</span>
+              <span onClick={() => router.push('/he-thong-dai-ly')}>HỆ THỐNG ĐẠI LÝ</span>
               <span>TIN TỨC</span>
               <span>TUYỂN DỤNG</span>
               <span>LIÊN HỆ</span>

@@ -1,0 +1,33 @@
+.intro{
+    .title{
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+    .titleChild{
+        button{
+            font-weight: bold;
+        }
+    }
+    .expertImg{
+        height: 330px;
+        margin: 15px 0px;
+        background-image: url('https://ligidoctorclinic.com/app/webroot/upload/admin/images/LINHGIA%20GIOI%20THIEU.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        @media screen and (max-width: 500px) {
+            height: 180px;
+            margin: 0px;
+        }
+    }
+    .machineImg{
+        background-image: url('https://ligidoctorclinic.com/app/webroot/upload/admin/images/LINHGIA%20GIOI%20THIEU%20(1).png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 700px;
+        width: 90%;
+        margin: 15px auto;
+        margin-bottom: 45px;
+    }
+}

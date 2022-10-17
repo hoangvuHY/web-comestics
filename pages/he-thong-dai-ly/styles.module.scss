@@ -1,0 +1,34 @@
+.systemStore{
+    .image{
+        background-image: url('https://ligidoctorclinic.com/app/webroot/upload/admin/images/LINHGIA%20HE%20THONG%20(4).png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 300px;
+        position: relative;
+        color: white;
+        & > div{
+            background: linear-gradient(to bottom, rgba(0,119,27,0), rgb(150, 140, 2));
+            padding: 10px 20px;
+            width: 100%;
+        }
+        & > div > div:nth-child(1){
+            font-size: 1.3rem;
+        }
+        & > div > div:nth-child(2){
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        display: flex;
+        align-items: flex-end;
+    }
+    .address{
+        padding-top: 5px;
+        font-weight: bold;
+    }
+    .telephone{
+        padding: 2px 0px;
+        font-weight: bold;
+    }
+}
