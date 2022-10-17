@@ -1,0 +1,47 @@
+.filter {
+  width: 80%;
+  display: flex;
+  align-items: center;
+
+  .title {
+    white-space: pre;
+  }
+
+  .buttonFilter {
+    display: inline-block;
+    position: relative;
+    padding: 3px 10px;
+    background: #fff;
+    border: 1px solid #e1e1e1;
+    margin-left: 8px;
+    color: #333;
+    font-size: 0.75rem;
+
+    &:hover {
+      color: #326e51;
+    }
+
+    &.active {
+      background: #326e51;
+      color: #fff;
+    }
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .filterResponsive {
+    display: none;
+
+    @media screen and (max-width: 768px) {
+      display: block !important;
+      width: 120px;
+      margin-left: 1rem;
+
+      select {
+        font-size: 0.75rem;
+      }
+    }
+  }
+}

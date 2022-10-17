@@ -1,7 +1,19 @@
 .productItem {
   padding: 0;
   margin: 0;
-  width: 25%;
+  width: calc(100% / 4);
+
+  @media screen and (max-width: 992px) {
+    width: calc(100% / 3);
+  }
+
+  @media screen and (max-width: 768px) {
+    width: calc(100% / 2);
+  }
+
+  @media screen and (max-width: 375px) {
+    width: calc(100%);
+  }
 
   .cardItem {
     padding: 1rem;
@@ -32,6 +44,7 @@
       justify-content: space-between;
       align-items: center;
       margin-top: 1rem;
+
       .sellPrice {
         color: #ff6600;
         line-height: 20px;

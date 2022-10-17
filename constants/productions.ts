@@ -1,22 +1,10 @@
 import { E_SORT_PRODUCTION } from "~/enum/production";
 
 export const sortFilterArrays = [
-  {
-    key: E_SORT_PRODUCTION.NEWEST,
-    value: 'Mới nhất'
-  },
-  {
-    key: E_SORT_PRODUCTION.BEST_SELL,
-    value: 'Bán chạy'
-  },
-  {
-    key: E_SORT_PRODUCTION.LOW_TO_HIGH,
-    value: 'Giá thấp đến cao'
-  },
-  {
-    key: E_SORT_PRODUCTION.HIGH_TO_LOW,
-    value: 'Giá cao đến thấp'
-  },
+  E_SORT_PRODUCTION.NEWEST,
+  E_SORT_PRODUCTION.BEST_SELL,
+  E_SORT_PRODUCTION.LOW_TO_HIGH,
+  E_SORT_PRODUCTION.HIGH_TO_LOW,
 ]
 
 export const OptionCountProduction = [

@@ -1,0 +1,27 @@
+.sliderItem {
+  .image {
+    height: 150px;
+
+    img {
+      object-fit: cover;
+    }
+
+    & > span {
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+
+  .content {
+    margin: 0.5rem 0;
+    .title {
+      color: #140d00;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .detail {
+      font-size: 0.9rem;
+    }
+  }
+}
