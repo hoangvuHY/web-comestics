@@ -1,4 +1,5 @@
-.newsHome {
+.recentProductions {
+  margin-bottom: 2rem;
   .description {
     text-align: center;
     margin-bottom: 2rem;
@@ -51,24 +52,6 @@
           &::after {
             right: -1px;
             box-shadow: 5px 0px 10px rgb(0 0 0 / 50%);
-          }
-        }
-      }
-
-      .slick-slide {
-        &:nth-child(even) {
-          padding: 0 1rem;
-        }
-
-        @media screen and (max-width: 768px) {
-          &:nth-child(even) {
-            padding-right: 0;
-          }
-        }
-
-        @media screen and (max-width: 375px) {
-          &:nth-child(even) {
-            padding: 0;
           }
         }
       }

@@ -7,7 +7,7 @@ import data from './data.json';
 import CardItem from './CardItem';
 import { OptionCountProduction } from '~/constants/productions';
 import FilterItem from './FilterItem';
-import NewsHomePage from './NewsHomePage';
+import RecentProduction from './RecentProduction';
 
 interface IProductionData {
   key: number;
@@ -63,7 +63,7 @@ const ProductionComponent = () => {
       </Row>
 
       <Row>
-        <NewsHomePage />
+        <RecentProduction />
       </Row>
     </Container>
   )
