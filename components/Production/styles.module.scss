@@ -21,4 +21,30 @@
   .productRow {
     justify-content: flex-start;
   }
+
+  .paginationPage {
+    :global {
+      display: flex;
+      margin: 1rem auto;
+      list-style: none;
+      justify-content: center;
+
+      li {
+        cursor: pointer;
+        border: 1px solid transparent;
+        border-radius: 4px;
+
+        a {
+          padding: 6px 12px;
+          display: inline-block;
+        }
+
+        &.selected {
+          color: #ff6600;
+          border: 1px solid #eeeeee;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
 }

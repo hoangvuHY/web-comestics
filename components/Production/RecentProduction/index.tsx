@@ -74,17 +74,15 @@ const settings = {
 
 const RecentProduction: FC = () => {
   return (
-    <Container>
-      <Row className={styles.recentProductions}>
-        <h2 className="title-header">GỢI Ý DÀNH RIÊNG CHO BẠN</h2>
+    <Row className={styles.recentProductions}>
+      <h2 className="title-header">GỢI Ý DÀNH RIÊNG CHO BẠN</h2>
 
-        <Slider className={styles.slider} {...settings}>
-          {data.productions.map((item) => (
-            <CardItem key={item.key} production={item} />
-          ))}
-        </Slider>
-      </Row>
-    </Container>
+      <Slider className={styles.slider} {...settings}>
+        {data.productions.map((item) => (
+          <CardItem key={item.key} production={item} />
+        ))}
+      </Slider>
+    </Row>
   );
 };
 
