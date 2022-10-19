@@ -1,0 +1,24 @@
+.productionContainer {
+  .filterRow {
+    padding: 0 1rem;
+    .filterContain {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem;
+      background: #eaeaea;
+
+      .displayRecord {
+        width: 120px;
+
+        select {
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+
+  .productRow {
+    justify-content: flex-start;
+  }
+}

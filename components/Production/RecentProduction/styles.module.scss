@@ -1,0 +1,70 @@
+.recentProductions {
+  margin-bottom: 2rem;
+  .description {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .slider {
+    position: relative;
+    cursor: pointer;
+
+    :global {
+      .slick-arrow {
+        width: 2rem;
+        height: 100%;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.7);
+        z-index: 1;
+        color: #140d00;
+        font-size: 1.25rem;
+        display: flex !important;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s;
+
+        &::before {
+          display: none;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 1px;
+          height: 100%;
+          top: 0;
+        }
+
+        &.slick-next {
+          right: 0.7rem;
+
+          &::after {
+            left: -1px;
+            box-shadow: -5px 0px 10px rgb(0 0 0 / 50%);
+          }
+        }
+
+        &.slick-prev {
+          left: 0.7rem;
+
+          &::after {
+            right: -1px;
+            box-shadow: 5px 0px 10px rgb(0 0 0 / 50%);
+          }
+        }
+      }
+    }
+
+    &:hover {
+      :global {
+        .slick-arrow {
+          transition: all 0.5s forwards;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
