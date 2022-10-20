@@ -53,12 +53,12 @@ function Header() {
             <div>
               <span onClick={() => router.push('/gioi-thieu')}>GIỚI THIỆU</span>
               <span onMouseOver={handleOnMouseOverService} onMouseLeave={handleOnMouseLeaveService} className={styles.service}>DỊCH VỤ</span>
-              <span>SẢN PHẨM</span>
+              <span onClick={() => router.push('/san-pham')}>SẢN PHẨM</span>
               <span>GIẢI PHÁP</span>
               <span onClick={() => router.push('/he-thong-dai-ly')}>HỆ THỐNG ĐẠI LÝ</span>
               <span>TIN TỨC</span>
-              <span>TUYỂN DỤNG</span>
-              <span>LIÊN HỆ</span>
+              <span onClick={() => router.push('/tuyen-dung')}>TUYỂN DỤNG</span>
+              <span onClick={() => router.push('/lien-he')}>LIÊN HỆ</span>
             </div>
           </Col>
         </Row>

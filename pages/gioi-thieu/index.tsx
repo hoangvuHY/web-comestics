@@ -68,7 +68,7 @@ export default function Introduction() {
             </Row>
             <div className={styles.title}>Đội ngũ chuyên gia</div>
             <div>Hệ thống chuỗi Viện thẩm mỹ LIGI DOCTOR CLINIC quy tụ hơn 300 chuyên gia, bác sĩ có tay nghề vững, giỏi chuyên môn, thường xuyên tham gia các khóa đào tạo, trong và ngoài nước.</div>
-            <div className={styles.expertImg} />
+            <div className={styles.expertImg} />--
             <div className={styles.title}>Máy móc nhập khẩu</div>
             <div>Tiên phong trong việc ứng dụng các công nghệ làm đẹp mới nhất, 100% trang thiết bị sử dụng tại Viện thẩm mỹ DIVA đều được nhập khẩu độc quyền tại Hoa Kỳ, Anh, Pháp,... Mang đến cho khách hàng trải nghiệm dịch vụ tiêu chuẩn quốc tế ngay tại Việt Nam.</div>
             <div className={styles.machineImg}></div>

@@ -1,0 +1,94 @@
+.contact{
+    .title{
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+    .name{
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+    .child{
+        font-weight: 500;
+        font-size: 1.1rem;
+        @media screen and (max-width: 772px){
+            margin-bottom: 1rem;
+        }
+        & > div{
+            padding: 5px 0px;
+        }
+        & > div:last-child{
+            padding-bottom: 0px;
+        }
+    }
+    .form{
+        input {
+            display: block;
+            width: 100%;
+            height: 3rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            &:focus{
+                outline: 1px solid rgb(77, 157, 223);
+            }
+            padding: 0px 10px;
+        }
+        textarea{
+            width: 100%;
+            height: 9rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            padding: 10px;
+            &:focus{
+                outline: 1px solid rgb(77, 157, 223);
+            }
+        }
+        .submit{
+            background-color: rgb(77, 157, 223);
+            border: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.3rem;
+            letter-spacing: 0.1rem;
+        }
+    }
+    .notify{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0.5);
+        .child{
+            background-color: white;
+            width: 30%;
+            @media screen and (max-width: 772px) {
+                width: 80%;
+            }
+            margin: auto;
+            margin-top: 2rem;
+            .title{
+                color:rgb(206, 158, 27);
+                text-align: center;
+                border-bottom: 1px solid rgb(218, 216, 216);
+            }
+            .content{
+                font-weight: bold;
+                padding: 10px;
+                text-align: center;
+                border-bottom: 1px solid rgb(218, 216, 216);
+            }
+            .close{
+                text-align: right;
+                padding: 10px;
+                span{
+                    font-weight: bold;
+                    color: rgb(247, 41, 41);
+                    font-size: 1.2rem;
+                    cursor: pointer;
+                }
+              
+            }
+        }
+       
+    }
+}
