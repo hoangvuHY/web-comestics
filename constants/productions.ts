@@ -9,11 +9,11 @@ export const sortFilterArrays = [
 
 export const OptionCountProduction = [
   {
-    key: 5,
+    key: 20,
     value: 'Hiển thị 20'
   },
   {
-    key: 10,
+    key: 40,
     value: 'Hiển thị 40'
   },
 ]

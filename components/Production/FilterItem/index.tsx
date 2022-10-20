@@ -1,26 +1,35 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import { Button, Form } from 'react-bootstrap';
 import classNames from 'classnames';
 
 import styles from './styles.module.scss';
 import { sortFilterArrays } from '~/constants/productions';
 
-const FilterItem: FC<{ dataProductList: any; setProductionData: any }> = ({ dataProductList, setProductionData }) => {
-  const [activeFilter, setActiveFilter] = useState(sortFilterArrays[1]);
+interface IProductionItem {
+  activeFilter: string;
+  setActiveFilter: any;
+  productionData: any;
+  setProductionData: any;
+}
+
+const FilterItem: FC<IProductionItem> = ({ activeFilter, setActiveFilter, productionData, setProductionData }) => {
+  useEffect(() => {
+    handleActiveFilter(activeFilter);
+  }, [activeFilter]);
 
   const handleFilterWithItem = (item: any) => {
     switch (item) {
-      case 'NEWEST':
-        const filterNewestData = dataProductList.filter((production: any) => production.isNewest);
+      case sortFilterArrays[0]:
+        const filterNewestData = productionData.filter((production: any) => production.isNewest);
         setProductionData([...filterNewestData]);
         break;
 
-      case 'BEST_SELL':
-        setProductionData([...dataProductList]);
+      case sortFilterArrays[1]:
+        setProductionData([...productionData]);
         break;
 
-      case 'LOW_TO_HIGH':
-        const filterLowToHighData = dataProductList
+      case sortFilterArrays[2]:
+        const filterLowToHighData = productionData
           .sort(
             (firstNumber: any, secondNumber: any) => firstNumber.priceSell - secondNumber.priceSell
           );
@@ -28,8 +37,8 @@ const FilterItem: FC<{ dataProductList: any; setProductionData: any }> = ({ data
         setProductionData([...filterLowToHighData]);
         break;
 
-      case 'HIGH_TO_LOW':
-        const filterHighToLowData = dataProductList
+      case sortFilterArrays[3]:
+        const filterHighToLowData = productionData
           .sort(
             (firstNumber: any, secondNumber: any) => (secondNumber.priceSell - firstNumber.priceSell)
           );

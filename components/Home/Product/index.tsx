@@ -6,6 +6,7 @@ import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 import styles from "./styles.module.scss";
 import data from "./data.json";
 import SliderItem from "./SliderItem";
+import { useRouter } from "next/router";
 
 
 interface IArrowSliderProps {
@@ -64,10 +65,12 @@ const settings = {
 };
 
 const Product: FC = () => {
+    const router = useRouter();
+
     return (
         <Container>
             <Row className={styles.newsHome}>
-                <h2 className="title-header">SẢN PHẨM</h2>
+                <h2 className="title-header" onClick={() => router.push('/san-pham')}>SẢN PHẨM</h2>
                 <h4 className={styles.childHeader}>Mỹ phẩm</h4>
                 <Slider className={styles.slider} {...settings}>
                     {data.products.map((item) => (

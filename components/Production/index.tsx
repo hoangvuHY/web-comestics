@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
-import { Container, Form, Row } from "react-bootstrap";
+import React, { useEffect, useState } from 'react'
+import { Container, Form, Pagination, Row } from "react-bootstrap";
 
 import styles from './styles.module.scss';
 
 import data from './data.json';
 import CardItem from './CardItem';
-import { OptionCountProduction } from '~/constants/productions';
+import { OptionCountProduction, sortFilterArrays } from '~/constants/productions';
 import FilterItem from './FilterItem';
 import RecentProduction from './RecentProduction';
+import ReactPaginate from 'react-paginate';
 
 interface IProductionData {
   key: number;
@@ -23,12 +24,28 @@ interface IProductionData {
 
 const ProductionComponent = () => {
   const [selectOption, setSelectOption] = useState(20);
-  const dataProductList: IProductionData[] = JSON.parse(JSON.stringify(data.productions)).slice(0, selectOption);
-  const [productionData, setProductionData] = useState<IProductionData[]>(dataProductList);
+  const dataProductList: IProductionData[] = JSON.parse(JSON.stringify(data.productions));
+  const [productionData, setProductionData] = useState<IProductionData[]>(dataProductList.slice(0, selectOption));
+  const [pageCount, setPageCount] = useState(0);
+  const [itemOffset, setItemOffset] = useState(0);
+  const [activeFilter, setActiveFilter] = useState(sortFilterArrays[1]);
+
+  useEffect(() => {
+    const endOffset = itemOffset + selectOption;
+    setPageCount(Math.ceil(dataProductList.length / selectOption));
+    setProductionData(dataProductList.slice(itemOffset, endOffset));
+  }, [itemOffset, selectOption]);
 
   const handleChangeSelectPage = (event: any) => {
     setSelectOption(event.target.value)
   }
+
+  const handlePageClick = (event: any) => {
+    const newOffset = (event.selected * selectOption) % dataProductList.length;
+
+    setActiveFilter(sortFilterArrays[1]);
+    setItemOffset(newOffset);
+  };
 
   return (
     <Container className={styles.productionContainer}>
@@ -38,7 +55,7 @@ const ProductionComponent = () => {
 
       <Row className={styles.filterRow}>
         <div className={styles.filterContain}>
-          <FilterItem dataProductList={dataProductList} setProductionData={setProductionData} />
+          <FilterItem activeFilter={activeFilter} setActiveFilter={setActiveFilter} productionData={productionData} setProductionData={setProductionData} />
 
           <div className={styles.displayRecord}>
             <Form.Select value={selectOption} onChange={handleChangeSelectPage}>
@@ -61,7 +78,17 @@ const ProductionComponent = () => {
           ))
         }
       </Row>
-
+      <Row>
+        <ReactPaginate
+          className={styles.paginationPage}
+          breakLabel="..."
+          nextLabel={null}
+          onPageChange={handlePageClick}
+          pageCount={pageCount}
+          previousLabel={null}
+          renderOnZeroPageCount={undefined}
+        />
+      </Row>
       <Row>
         <RecentProduction />
       </Row>

@@ -1,13 +1,62 @@
-.newPost {
+.newsItem {
+  max-width: calc(100% / 3);
+
+  .cardItem {
+    height: 450px;
+    border: 1px solid transparent;
     cursor: pointer;
-    .newsItemImage {
-      max-height: 300px;
+
+    .image {
+      height: 300px;
+
+      img {
+        object-fit: cover;
+      }
+
+      & > span {
+        width: 100% !important;
+        height: 100% !important;
+      }
+
+      &:hover {
+        & + .title {
+          color: #036b05;
+        }
+      }
+    }
+
+    .title {
+      font-size: 1.5rem;
+      line-height: 1.8rem;
+      margin-top: 12px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: bold;
+      height: 58px;
+
+      &:hover {
+        color: #036b05;
+      }
+    }
+
+    .viewMore {
+      display: flex;
+      margin-top: 0.5rem;
+      span {
+        font-size: 1rem;
+        font-weight: 800;
+      }
+
+      .iconRight {
+        margin-left: 1rem;
+      }
+
+      &:hover {
+        color: #036b05;
+      }
     }
   }
-  .listNewsMore {
-    background-color: #baa62f;
-  }
-  .listNewsMore:hover {
-    background-color: black;
-  }
-  
+}

@@ -53,7 +53,7 @@ function Header() {
             <div>
               <span onClick={() => router.push('/gioi-thieu')}>GIỚI THIỆU</span>
               <span onMouseOver={handleOnMouseOverService} onMouseLeave={handleOnMouseLeaveService} className={styles.service}>DỊCH VỤ</span>
-              <span onClick={() => router.push('/san-pham')}>SẢN PHẨM</span>
+              <span onClick={() => router.push('/san-pham')}> SẢN PHẨM</span>
               <span>GIẢI PHÁP</span>
               <span onClick={() => router.push('/he-thong-dai-ly')}>HỆ THỐNG ĐẠI LÝ</span>
               <span>TIN TỨC</span>
@@ -145,7 +145,7 @@ function Header() {
         <div className={styles.shadow} id="shadow" onClick={handleClickShadow}>
         </div>
       </Container >
-    </div>
+    </div >
 
   );
 }
