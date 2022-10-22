@@ -1,0 +1,49 @@
+.newsDetailContainer {
+  .containRow {
+    .titleNewDetail {
+      font-size: 1.5rem;
+      text-align: left;
+    }
+
+    .detail {
+      padding: 0;
+      padding-bottom: 1rem;
+      line-height: 1.5;
+      text-align: justify;
+      font-size: 1.1rem;
+      color: #212529d4;
+    }
+
+    .image {
+      height: 70vh;
+      width: 80%;
+      margin: auto;
+      margin-bottom: 3rem;
+
+      img {
+        object-fit: cover;
+      }
+
+      & > span {
+        width: 100% !important;
+        height: 100% !important;
+      }
+
+      .imageDes {
+        text-align: center;
+      }
+
+      @media screen and (max-width: 768px) {
+        margin-bottom: 4rem;
+      }
+      
+      @media screen and (max-width: 375px) {
+        margin-bottom: 5rem;
+      }
+    }
+
+    @media screen and (max-width: 576px) {
+      padding: 0 1rem;
+    }
+  }
+}

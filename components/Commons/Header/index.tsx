@@ -56,7 +56,7 @@ function Header() {
               <span onClick={() => router.push('/san-pham')}> SẢN PHẨM</span>
               <span>GIẢI PHÁP</span>
               <span onClick={() => router.push('/he-thong-dai-ly')}>HỆ THỐNG ĐẠI LÝ</span>
-              <span>TIN TỨC</span>
+              <span onClick={() => router.push('/tin-tuc')}>TIN TỨC</span>
               <span onClick={() => router.push('/tuyen-dung')}>TUYỂN DỤNG</span>
               <span onClick={() => router.push('/lien-he')}>LIÊN HỆ</span>
             </div>
