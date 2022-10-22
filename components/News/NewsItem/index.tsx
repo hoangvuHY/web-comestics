@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { HiArrowNarrowRight } from 'react-icons/hi';
-import NewsDetail from "~/components/NewsDetail";
+import NewsDetail from "~/components/News/NewsDetail";
 
 import styles from "./styles.module.scss";
 

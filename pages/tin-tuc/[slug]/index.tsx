@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import React from 'react'
 
 import newsData from '~/components/News/data.json';
-import NewsDetail from '~/components/NewsDetail';
+import NewsDetail from '~/components/News/NewsDetail';
 import { toSlug } from '~/helpers';
 
 const SlugNews = () => {

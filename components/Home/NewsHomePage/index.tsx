@@ -7,6 +7,7 @@ import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 import styles from "./styles.module.scss";
 import data from "./data.json";
 import SliderItem from "./SliderItem";
+import { useRouter } from "next/router";
 
 interface IArrowSliderProps {
   className?: string;
@@ -64,10 +65,12 @@ const settings = {
 };
 
 const NewsHomePage: FC = () => {
+  const router = useRouter();
+
   return (
     <Container>
       <Row className={styles.newsHome}>
-        <h2 className="title-header">TIN TỨC MỚI</h2>
+        <h2 onClick={() => router.push('/tin-tuc')} className="title-header">TIN TỨC MỚI</h2>
 
         <p className={styles.description}>
           Chuyên mục cung cấp các thông tin về các sản phẩm làm đẹp máy móc
