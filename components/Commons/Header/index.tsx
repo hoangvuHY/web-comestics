@@ -38,6 +38,10 @@ function Header() {
   const handleOnClickService = () => {
     document.getElementById('service-child-2')?.classList.toggle('d-block');
   }
+  const handleLinkToPage = (page: string) => {
+    handleCloseStickyMenu();
+    router.push(page)
+  }
   return (
     <div className={styles.parentHeader}>
       <Container className={styles.header}>
@@ -56,7 +60,7 @@ function Header() {
               <span onClick={() => router.push('/san-pham')}> SẢN PHẨM</span>
               <span>GIẢI PHÁP</span>
               <span onClick={() => router.push('/he-thong-dai-ly')}>HỆ THỐNG ĐẠI LÝ</span>
-              <span>TIN TỨC</span>
+              <span onClick={() => router.push('/tin-tuc')}>TIN TỨC</span>
               <span onClick={() => router.push('/tuyen-dung')}>TUYỂN DỤNG</span>
               <span onClick={() => router.push('/lien-he')}>LIÊN HỆ</span>
             </div>
@@ -90,7 +94,7 @@ function Header() {
               <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
               <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
               <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-              <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
+              <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>   
             </div>
           </div>
         </div>
@@ -98,7 +102,7 @@ function Header() {
           <div className={styles.faTimes}>
             <FaTimes className={styles.iconFaTimes} onClick={handleCloseStickyMenu} />
           </div>
-          <div className={styles.itemMenu}>GIỚI THIỆU</div>
+          <div className={styles.itemMenu} onClick={() => handleLinkToPage('/gioi-thieu')}>GIỚI THIỆU</div>
           <div className={`${styles.itemMenu} d-flex justify-content-between align-items-center`} onClick={handleOnClickService}>
             <span>DỊCH VỤ</span>
             <FaAngleDown className={styles.iconExpand} />
@@ -107,10 +111,10 @@ function Header() {
             <div>
               <div className={styles.title}>ĐIỀU TRỊ</div>
               <div className={styles.serviceChild3}>
+                <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>               
                 <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
                 <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-                <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-                <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
+                <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>     
                 <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
               </div>
             </div>
@@ -135,12 +139,12 @@ function Header() {
               </div>
             </div>
           </div>
-          <div className={styles.itemMenu}>SẢN PHẨM</div>
+          <div className={styles.itemMenu} onClick={() => handleLinkToPage('/san-pham')}>SẢN PHẨM</div>
           <div className={styles.itemMenu}>GIẢI PHÁP</div>
-          <div className={styles.itemMenu}>HỆ THỐNG ĐẠI LÝ</div>
-          <div className={styles.itemMenu}>TIN TỨC</div>
-          <div className={styles.itemMenu}>TUYỂN DỤNG</div>
-          <div className={styles.itemMenu}>LIÊN HỆ</div>
+          <div className={styles.itemMenu} onClick={() => handleLinkToPage('/he-thong-dai-ly')}>HỆ THỐNG ĐẠI LÝ</div>
+          <div className={styles.itemMenu} onClick={() => handleLinkToPage('/tin-tuc')}>TIN TỨC</div>
+          <div className={styles.itemMenu} onClick={() => handleLinkToPage('/tuyen-dung')}>TUYỂN DỤNG</div>
+          <div className={styles.itemMenu} onClick={() => handleLinkToPage('/lien-he')}>LIÊN HỆ</div>
         </div>
         <div className={styles.shadow} id="shadow" onClick={handleClickShadow}>
         </div>
