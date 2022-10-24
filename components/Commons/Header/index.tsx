@@ -48,7 +48,7 @@ function Header() {
         <Row>
           <Col xs={12} lg={4} className={`d-flex align-items-center p-1 ${styles.menuLeft}`}>
             <FaBars className={styles.fabars} onClick={handleOnClickFaBars} />
-            <div className={styles.image}>
+            <div onClick={() => router.push('/')} className={styles.image}>
               <Image src={logo} width="70px" height="70px" alt="Logo" />
             </div>
             <div className={styles.sologan}>Thiên đường làm đẹp</div>

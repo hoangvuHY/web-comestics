@@ -1,5 +1,5 @@
 import type { AppProps } from "next/app";
-import Head from "next/head"; 
+import Head from "next/head";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'slick-carousel/slick/slick.css';
@@ -16,6 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <Layout>
       <Head>
         <title>HHG BEAUTY</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="HHG beauty" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

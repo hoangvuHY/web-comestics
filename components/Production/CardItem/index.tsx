@@ -1,5 +1,7 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import React, { FC } from 'react'
+import { toSlug } from '~/helpers';
 
 import styles from './styles.module.scss';
 
@@ -16,8 +18,11 @@ interface IProductionData {
 }
 
 const CardItem: FC<{ production: IProductionData }> = ({ production }) => {
+  const router = useRouter();
+  const handleProductionDetail = () => router.push(`/san-pham/${toSlug(production.name)}`)
+
   return (
-    <div className={styles.productItem}>
+    <div onClick={handleProductionDetail} className={styles.productItem}>
       <div className={styles.cardItem}>
         <div className={styles.image}>
           <Image

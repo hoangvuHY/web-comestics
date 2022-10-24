@@ -1,62 +1,58 @@
-.newsItem {
-  max-width: calc(100% / 3);
+.cardItem {
+  height: 450px;
+  border: 1px solid transparent;
+  cursor: pointer;
 
-  .cardItem {
-    height: 450px;
-    border: 1px solid transparent;
-    cursor: pointer;
+  .image {
+    height: 300px;
 
-    .image {
-      height: 300px;
-
-      img {
-        object-fit: cover;
-      }
-
-      & > span {
-        width: 100% !important;
-        height: 100% !important;
-      }
-
-      &:hover {
-        & + .title {
-          color: #036b05;
-        }
-      }
+    img {
+      object-fit: cover;
     }
 
-    .title {
-      font-size: 1.5rem;
-      line-height: 1.8rem;
-      margin-top: 12px;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      font-weight: bold;
-      height: 58px;
+    & > span {
+      width: 100% !important;
+      height: 100% !important;
+    }
 
-      &:hover {
+    &:hover {
+      & + .title {
         color: #036b05;
       }
     }
+  }
 
-    .viewMore {
-      display: flex;
-      margin-top: 0.5rem;
-      span {
-        font-size: 1rem;
-        font-weight: 800;
-      }
+  .title {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    margin-top: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    height: 58px;
 
-      .iconRight {
-        margin-left: 1rem;
-      }
+    &:hover {
+      color: #036b05;
+    }
+  }
 
-      &:hover {
-        color: #036b05;
-      }
+  .viewMore {
+    display: flex;
+    margin-top: 0.5rem;
+    span {
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .iconRight {
+      margin-left: 1rem;
+    }
+
+    &:hover {
+      color: #036b05;
     }
   }
 }

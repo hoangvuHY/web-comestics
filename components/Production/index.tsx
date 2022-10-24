@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Container, Form, Pagination, Row } from "react-bootstrap";
 
 import styles from './styles.module.scss';
@@ -23,6 +23,8 @@ interface IProductionData {
 }
 
 const ProductionComponent = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   const [selectOption, setSelectOption] = useState(20);
   const dataProductList: IProductionData[] = JSON.parse(JSON.stringify(data.productions));
   const [productionData, setProductionData] = useState<IProductionData[]>(dataProductList.slice(0, selectOption));
@@ -36,6 +38,12 @@ const ProductionComponent = () => {
     setProductionData(dataProductList.slice(itemOffset, endOffset));
   }, [itemOffset, selectOption]);
 
+  useEffect(() => {
+    if (scrollRef.current !== null) {
+      scrollRef.current.scrollIntoView();
+    }
+  }, [productionData])
+
   const handleChangeSelectPage = (event: any) => {
     setSelectOption(event.target.value)
   }
@@ -48,7 +56,7 @@ const ProductionComponent = () => {
   };
 
   return (
-    <Container className={styles.productionContainer}>
+    <Container ref={scrollRef} className={styles.productionContainer}>
       <Row>
         <h2 className="title-header">SẢN PHẨM CỦA HHG</h2>
       </Row>

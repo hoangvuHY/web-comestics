@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   width: calc(100% / 4);
+  cursor: pointer;
 
   @media screen and (max-width: 992px) {
     width: calc(100% / 3);
