@@ -1,9 +1,9 @@
 import React, { FC } from 'react'
 import { Container, Row } from 'react-bootstrap'
 import classNames from 'classnames';
+import Image from 'next/image';
 
 import styles from './styles.module.scss';
-import Image from 'next/image';
 
 interface INewsDetail {
   header?: string;

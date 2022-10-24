@@ -61,7 +61,7 @@ function Header() {
               <span onClick={() => router.push('/gioi-thieu')}>GIỚI THIỆU</span>
               <span onMouseOver={handleOnMouseOverService} onMouseLeave={handleOnMouseLeaveService} className={styles.service}>DỊCH VỤ</span>
               <span onClick={() => router.push('/san-pham')}> SẢN PHẨM</span>
-              <span>GIẢI PHÁP</span>
+              <span onClick={() => router.push('/giai-phap-tu-van')}>GIẢI PHÁP</span>
               <span onClick={() => router.push('/he-thong-dai-ly')}>HỆ THỐNG ĐẠI LÝ</span>
               <span onClick={() => router.push('/tin-tuc')}>TIN TỨC</span>
               <span onClick={() => router.push('/tuyen-dung')}>TUYỂN DỤNG</span>
