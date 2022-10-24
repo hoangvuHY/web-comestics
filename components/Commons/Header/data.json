@@ -1,0 +1,25 @@
+{
+    "service": [
+        {
+            "title": "Điều trị",
+            "child": [
+                "Điều trị viêm nang lông",
+                "Điều trị rạn da",
+                "Điều trị dị ứng da"
+            ]
+        },
+        {
+            "title": "Chăm sóc da",
+            "child": [
+                "Làm trắng da mặt",
+                "Xóa thâm da mặt"
+            ]
+        },
+        {
+            "title": "Dịch vụ khác",
+            "child": [
+                "Xoa bóp điểm huyệt"
+            ]
+        }
+    ]
+}

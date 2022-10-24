@@ -6,8 +6,11 @@ import Image from 'next/image';
 import React, { useEffect } from "react";
 import { FaBars, FaTimes, FaAngleDown } from "react-icons/fa";
 import { useRouter } from "next/router";
+import data from './data.json';
+import { toSlug } from "~/helpers";
 
 function Header() {
+  const service = data.service;
   const router = useRouter();
   const handleOnMouseOverService = () => {
     document.getElementById('service-child')?.classList.add('d-flex');
@@ -67,36 +70,18 @@ function Header() {
           </Col>
         </Row>
         <div className={styles.serviceChild} id="service-child" onMouseOver={handleOnMouseOverServiceChild} onMouseLeave={handleOnMouseLeaveServiceChild}>
-          <div>
-            <div className={styles.title}>ĐIỀU TRỊ</div>
-            <div className={styles.text}>
-              <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-              <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-              <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-              <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-              <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-            </div>
-          </div>
-          <div>
-            <div className={styles.title}>ĐIỀU TRỊ</div>
-            <div className={styles.text}>
-              <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-              <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-              <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-              <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-              <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-            </div>
-          </div>
-          <div>
-            <div className={styles.title}>ĐIỀU TRỊ</div>
-            <div className={styles.text}>
-              <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-              <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-              <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-              <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-              <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>   
-            </div>
-          </div>
+          {
+            service.map((value, index) => (
+              <div key={index}>
+                <div className={styles.title}>{value.title}</div>
+                <div className={styles.text}>
+                  {value.child.map((v, i) => (
+                    <div key={i} onClick={() => router.push(`/dich-vu/${toSlug(v)}`)}>{v}</div>
+                  ))}
+                </div>
+              </div>
+            ))
+          }
         </div>
         <div className={styles.stickyMenu} id="sticky-menu">
           <div className={styles.faTimes}>
@@ -108,36 +93,18 @@ function Header() {
             <FaAngleDown className={styles.iconExpand} />
           </div>
           <div className={styles.serviceChild2} id="service-child-2">
-            <div>
-              <div className={styles.title}>ĐIỀU TRỊ</div>
-              <div className={styles.serviceChild3}>
-                <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>               
-                <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-                <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-                <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>     
-                <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-              </div>
-            </div>
-            <div>
-              <div className={styles.title}>ĐIỀU TRỊ</div>
-              <div className={styles.serviceChild3}>
-                <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-                <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-                <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-                <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-                <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-              </div>
-            </div>
-            <div>
-              <div className={styles.title}>ĐIỀU TRỊ</div>
-              <div className={styles.serviceChild3}>
-                <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-                <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-                <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-                <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-                <div>ĐIỀU TRỊ VIÊM NANG LÔNG</div>
-              </div>
-            </div>
+            {
+              service.map((value, index) => (
+                <div key={index}>
+                  <div className={styles.title}>{value.title}</div>
+                  <div className={styles.serviceChild3}>
+                    {value.child.map((v, i) => (
+                      <div key={i} onClick={() => router.push(`/dich-vu/${toSlug(v)}`)}>{v}</div>
+                    ))}
+                  </div>
+                </div>
+              ))
+            }
           </div>
           <div className={styles.itemMenu} onClick={() => handleLinkToPage('/san-pham')}>SẢN PHẨM</div>
           <div className={styles.itemMenu}>GIẢI PHÁP</div>
